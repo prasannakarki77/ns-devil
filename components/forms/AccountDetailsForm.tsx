@@ -13,6 +13,7 @@ import {
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { Input } from "../ui/input";
+import useFormValues from "@/app/hooks/useFormValues";
 
 const formSchema = z.object({
   email: z.string().min(1, { message: "Email is required" }).email({
@@ -26,7 +27,7 @@ const formSchema = z.object({
 export const AccountDetailsForm: React.FC<{ onNext: VoidFunction }> = ({
   onNext,
 }) => {
-  const router = useRouter();
+  const { values, setValues } = useFormValues();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -42,7 +43,8 @@ export const AccountDetailsForm: React.FC<{ onNext: VoidFunction }> = ({
     formState: { isSubmitting },
   } = form;
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setValues({ ...values, ...data });
     onNext();
   };
 
