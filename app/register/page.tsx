@@ -8,14 +8,26 @@ import {} from "@/components/ui/form";
 
 import { Check } from "lucide-react";
 import { useState } from "react";
-
+import axios from "axios";
+import useFormValues from "../hooks/useFormValues";
+import toast from "react-hot-toast";
 const Register = () => {
   const [active, setActive] = useState(1);
-
+  const { values, setValues } = useFormValues();
   const handlePrevious = () => setActive((p) => p - 1);
 
   const handleNext = () => {
     setActive((p) => p + 1);
+  };
+
+  const onFinalSubmit = async () => {
+    try {
+      await axios.post("/api/register", values);
+      toast.success("Registration Success!");
+      setValues({});
+    } catch (error: any) {
+      toast.error(error.response.data.message ?? "Registration Failed");
+    }
   };
 
   let currentForm;
@@ -30,7 +42,10 @@ const Register = () => {
   }
   if (active == 3) {
     currentForm = (
-      <AdditionalDetailsForm onNext={handleNext} onPrevious={handlePrevious} />
+      <AdditionalDetailsForm
+        onFinalSubmit={onFinalSubmit}
+        onPrevious={handlePrevious}
+      />
     );
   }
 

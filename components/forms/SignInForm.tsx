@@ -15,6 +15,8 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Input } from "../ui/input";
 import { Card } from "../ui/card";
+import { signIn } from "next-auth/react";
+
 const formSchema = z.object({
   email: z.string().min(1, { message: "Email is required" }).email({
     message: "Must be a valid email",
@@ -42,7 +44,20 @@ export const SignInForm = () => {
   } = form;
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    toast.success("Successfully toasted!");
+    try {
+      const callback = await signIn("credentials", {
+        ...data,
+        redirect: false,
+      });
+      if (callback?.error) {
+        toast.error(callback.error);
+      }
+      if (callback?.ok && !callback?.error) {
+        toast.success("Logged In!");
+      }
+    } catch (error: any) {
+      toast.error("Sign In Failed !");
+    }
   };
 
   return (
@@ -90,7 +105,6 @@ export const SignInForm = () => {
           Create an account
         </Button>
       </div>
-      <Toaster />
     </Card>
   );
 };

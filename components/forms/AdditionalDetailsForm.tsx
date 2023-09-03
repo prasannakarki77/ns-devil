@@ -18,13 +18,13 @@ const formSchema = z.object({
 
 const institutionOptions = [{ label: "Institute a", value: "institute A" }];
 
-interface PersonalDetailsFormProps {
-  onNext: VoidFunction;
+interface AdditionalDetailsFormProps {
+  onFinalSubmit: VoidFunction;
   onPrevious: VoidFunction;
 }
 
-export const AdditionalDetailsForm: React.FC<PersonalDetailsFormProps> = ({
-  onNext,
+export const AdditionalDetailsForm: React.FC<AdditionalDetailsFormProps> = ({
+  onFinalSubmit,
   onPrevious,
 }) => {
   const { values, setValues } = useFormValues();
@@ -47,7 +47,7 @@ export const AdditionalDetailsForm: React.FC<PersonalDetailsFormProps> = ({
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setValues({ ...values, ...data });
-    onNext();
+    onFinalSubmit();
   };
   const handlePrevClick = () => {
     clearErrors();

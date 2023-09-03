@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ClientOnly from "@/components/ClientOnly";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <ClientOnly>
         <Navbar />
+        <Toaster position="bottom-left" reverseOrder={false} />
       </ClientOnly>
       <body className={inter.className}>{children}</body>
     </html>
