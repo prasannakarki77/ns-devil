@@ -1,13 +1,13 @@
 "use client";
 
 import { AccountDetailsForm } from "@/components/forms/AccountDetailsForm";
+import { AdditionalDetailsForm } from "@/components/forms/AdditionalDetailsForm";
+import { PersonalDetailsForm } from "@/components/forms/PersonalDetailsForm";
 import { Card } from "@/components/ui/card";
 import {} from "@/components/ui/form";
 
 import { Check } from "lucide-react";
 import { useState } from "react";
-import toast from "react-hot-toast";
-import * as z from "zod";
 
 const Register = () => {
   const [active, setActive] = useState(1);
@@ -22,6 +22,16 @@ const Register = () => {
 
   if (active == 1) {
     currentForm = <AccountDetailsForm onNext={handleNext} />;
+  }
+  if (active == 2) {
+    currentForm = (
+      <PersonalDetailsForm onNext={handleNext} onPrevious={handlePrevious} />
+    );
+  }
+  if (active == 3) {
+    currentForm = (
+      <AdditionalDetailsForm onNext={handleNext} onPrevious={handlePrevious} />
+    );
   }
 
   return (
@@ -47,7 +57,7 @@ const Register = () => {
 
           <Progress step={3} title={"Additional Details"} active={active} />
         </div>
-        {currentForm}
+        <div className=" mt-10">{currentForm}</div>
       </Card>
     </div>
   );

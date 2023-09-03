@@ -11,10 +11,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { GithubIcon, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Input } from "../ui/input";
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Card } from "../ui/card";
 const formSchema = z.object({
   email: z.string().min(1, { message: "Email is required" }).email({
     message: "Must be a valid email",
