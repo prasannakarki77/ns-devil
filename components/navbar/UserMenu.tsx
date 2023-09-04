@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { signOut } from "next-auth/react";
 import { getInitials } from "@/lib/utils";
 import { User } from "@prisma/client";
+import Link from "next/link";
 interface UserMenuProps {
   currentUser?: User | null;
 }
@@ -36,10 +37,12 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <User2Icon className="mr-2 h-4 w-4" />
-            <span>Profile</span>
-          </DropdownMenuItem>
+          <Link href={"/profile"}>
+            <DropdownMenuItem>
+              <User2Icon className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+            </DropdownMenuItem>
+          </Link>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
