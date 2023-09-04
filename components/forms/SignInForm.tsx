@@ -54,6 +54,7 @@ export const SignInForm = () => {
       }
       if (callback?.ok && !callback?.error) {
         toast.success("Logged In!");
+        router.refresh();
       }
     } catch (error: any) {
       toast.error("Sign In Failed !");
