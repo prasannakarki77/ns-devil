@@ -26,7 +26,7 @@ export default async function RootLayout({
       <Provider>
         <ClientOnly>
           <Navbar currentUser={currentUser} />
-          <Toaster position="bottom-left" reverseOrder={false} />
+          <Toaster />
         </ClientOnly>
         <body className={inter.className}>{children}</body>
       </Provider>

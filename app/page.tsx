@@ -7,7 +7,7 @@ export default async function Home() {
   const currentUser = await getCurrentUser();
 
   return (
-    <main className=" min-h-screen p-10 ">
+    <main className=" container min-h-screen p-10 ">
       {!currentUser ? (
         <ClientOnly>
           <div className="mt-[10vh] flex flex-col items-center">

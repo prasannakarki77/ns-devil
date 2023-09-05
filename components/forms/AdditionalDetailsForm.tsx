@@ -10,6 +10,9 @@ import useFormValues from "@/app/hooks/useFormValues";
 import RHFTextField from "../react-hook-form/RHFTextField";
 import RHFSelect from "../react-hook-form/RHFSelect";
 import RHFDatePicker from "../react-hook-form/RHFDatePicker";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   institution: z.string(),
@@ -28,6 +31,8 @@ export const AdditionalDetailsForm: React.FC<AdditionalDetailsFormProps> = ({
   onPrevious,
 }) => {
   const { values, setValues } = useFormValues();
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,17 +42,14 @@ export const AdditionalDetailsForm: React.FC<AdditionalDetailsFormProps> = ({
     },
   });
 
-  const {
-    handleSubmit,
-    control,
-    clearErrors,
-    getValues,
-    formState: { isSubmitting },
-  } = form;
+  const { handleSubmit, control, clearErrors, getValues } = form;
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setSubmitting(true);
     setValues({ ...values, ...data });
     onFinalSubmit();
+    setSubmitting(false);
+    router.push("/");
   };
   const handlePrevClick = () => {
     clearErrors();
@@ -77,7 +79,10 @@ export const AdditionalDetailsForm: React.FC<AdditionalDetailsFormProps> = ({
         />
         <div className="flex justify-between">
           <Button onClick={handlePrevClick}>Previous</Button>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" disabled={submitting}>
+            {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Submit
+          </Button>
         </div>
       </form>
     </Form>
