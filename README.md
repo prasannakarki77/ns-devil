@@ -1,4 +1,18 @@
+## Features
+- Multi step form for createing an account
+- Logged In user profile page
+- Students academic data table with search filter
+- Students page with all their academic details
 
+## Built With
+- [React](https://reactjs.org/) - Frontend Library
+- [Next JS](https://nextjs.org/) - React Framework
+- [TailwindCSS](https://tailwindcss.com/) - CSS Framework
+- [ShadCN](https://ui.shadcn.com/) - UI Library
+- [NextAuth](https://next-auth.js.org/) - Authentication
+- [Prisma](https://www.prisma.io/) - ORM
+
+## Screenshots
 
 ![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/764ec1e4-3c85-4277-8cf0-426e23bc5f12)
 
