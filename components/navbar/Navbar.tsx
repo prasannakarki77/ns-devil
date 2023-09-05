@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import UserMenu from "./UserMenu";
 import { User } from "@prisma/client";
-import { useSession } from "next-auth/react";
 interface UserMenuProps {
   currentUser?: User | null;
 }

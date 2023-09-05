@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import ClientOnly from "@/components/ClientOnly";
 import { Toaster } from "react-hot-toast";
 import getCurrentUser from "./actions/getCurrentUser";
-import Provider from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +22,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <Provider>
-        <ClientOnly>
-          <Navbar currentUser={currentUser} />
-          <Toaster />
-        </ClientOnly>
-        <body className={inter.className}>{children}</body>
-      </Provider>
+      <ClientOnly>
+        <Navbar currentUser={currentUser} />
+        <Toaster />
+      </ClientOnly>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
