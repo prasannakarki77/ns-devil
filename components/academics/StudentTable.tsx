@@ -45,6 +45,7 @@ export function StudentTable() {
   const [data, setData] = useState<Student[]>(ACADEMICS);
   const [selectedId, setSelectedId] = useState<Number>();
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const handleDelete = async (id: number) => {
     setSelectedId(id);
@@ -106,7 +107,9 @@ export function StudentTable() {
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 className="flex gap-2 items-center "
-                onClick={() => {}}
+                onClick={() => {
+                  router.push(`/student/${row.original.id}`);
+                }}
               >
                 <Eye size={15} />
                 View Details
