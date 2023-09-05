@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/764ec1e4-3c85-4277-8cf0-426e23bc5f12)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/5abf084d-abfc-49b4-8ccf-95a4090665f1)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/477715ea-bef1-418d-92bf-22048d06aa84)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/2911a0b9-a2a6-4737-8bc8-2fbb5e9cc59f)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/40566df7-b3fa-4a16-a56c-d4dc47ef91a6)
 
-## Learn More
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/f6eeaec8-e647-4096-99fe-cfd4a76c7b48)
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/151a58e4-5f53-4768-8553-4ada30dff804)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/prasannakarki77/ns-devil/assets/63549402/7cf0dfc7-fdc5-4a08-b4d0-d67fd90938eb)
